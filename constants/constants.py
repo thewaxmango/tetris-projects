@@ -1,12 +1,5 @@
 BOARD_WIDTH = 10
 BOARD_HEIGHT = 30
 
-EMPTY = 0
-I_PIECE = 1
-J_PIECE = 2
-L_PIECE = 3
-O_PIECE = 4
-S_PIECE = 5
-T_PIECE = 6
-Z_PIECE = 7
-GARBAGE = 8
+int_to_block = "_IJLOSTZ█"
+block_to_int = {v:k for k, v in enumerate(int_to_block)}
