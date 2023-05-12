@@ -1,48 +1,18 @@
-import Field
-import py_fumen
+from constants import *
+import Piece, Field
 
-class Replay_Frame:
-    def __init__(self) -> None:
-        self._field = None
-        self._message = None 
-        self._queue = None
-        self._garbage_queue = None
-        self._root_time = None
-        self._timestamp = None
-    
-    def set_field(self, field: Field.Field):
+class Queue:
+    def __init__(self):
         pass
 
-    def set_message(self, message: str):
-        pass
+class Field:
+    def __init__(self, field: Field.Field = None, width:int = BOARD_WIDTH, height:int = BOARD_HEIGHT, active: Piece.Piece = Piece()):
+        self._width, self._height = width, height
+        self._field = field
+        self._active = active
 
-    def set_queue(self, queue: Field.Queue):
-        pass
+    def copy(self) -> Field.Field:
+        return Field(field = self._field, width = self._width, height = self._height, active = self._active.copy())
 
-    def set_garbage_queue(self, queue: list):
+    def lock(self, next: Queue) -> None:
         pass
-
-    def set_root_time(self, time: float):
-        pass
-    
-    def set_time(self, time: float):
-        pass
-
-    def to_py_fumen(self) -> py_fumen.page.Page:
-        pass
-
-class Replay:
-    def __init__(self) -> None:
-        self._frames = []
-
-    def add_frame(self, frame: Replay_Frame) -> None:
-        pass
-
-    def get_frame(self, index: int) -> Replay_Frame:
-        pass
-
-    def reset(self) -> None:
-        pass
-
-    def to_py_fumen(self) -> list:
-        pass 
